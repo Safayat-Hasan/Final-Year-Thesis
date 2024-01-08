@@ -1,0 +1,12 @@
+# encoding: utf-8
+# 2020 R1
+SetScriptVersion(Version="20.1.164")
+system1 = GetSystem(Name="Study")
+study1 = system1.GetContainer(ComponentName="Study")
+physicsCoupling1 = study1.GetPhysicsCoupling(Name="PhysicsCoupling 1")
+physicsCoupling1.Side2Locations = ["BODY2"]
+physicsCoupling1.Side2Locations = []
+geometryModelingComponent1 = system1.GetComponent(Name="Geometry Modeling")
+modeling1 = geometryModelingComponent1.GetTaskObject()
+Modeling.ReloadDocument(ModelingAnchor=modeling1)
+Save(Overwrite=True)

@@ -1,0 +1,484 @@
+<!DOCTYPE DEXXMLDoc SYSTEM "DEXXMLDoc.DTD">
+<DEXXMLDoc name="optimization.dxpx" creator="DX13" version="13.0.5.0">
+<designInfo studyType="ResponseSurface" studySubType="Randomized" designType="BoxBehnken" noOfRuns="45" noOfFactors="5" noOfResponses="1" noOfAnalyses="1">
+<designNotes>This data file created by Design-Expert 13.</designNotes>
+</designInfo>
+<blockInfo>
+<block code="0" name="Block 1"/>
+</blockInfo>
+<factorInfo>
+<factor id="A" name="CH" unit="mm" type="Numeric" uuid="00000000-fa7f-0000-0000-c42a84020000">
+<numeric format="General" low="15" high="20" stdDev="0"/>
+</factor>
+<factor id="B" name="CW" unit="mm" type="Numeric" uuid="00000000-fa7f-0000-0000-c42a84020000">
+<numeric format="General" low="15" high="20" stdDev="0"/>
+</factor>
+<factor id="C" name="GH" unit="mm" type="Numeric" uuid="00000000-fa7f-0000-0000-c42a84020000">
+<numeric format="General" low="3" high="8" stdDev="0"/>
+</factor>
+<factor id="D" name="WT" unit="mm" type="Numeric" uuid="00000000-fa7f-0000-0000-c42a84020000">
+<numeric format="General" low="3" high="8" stdDev="0"/>
+</factor>
+<factor id="E" name="BT" unit="mm" type="Numeric" uuid="00000000-fa7f-0000-0000-c42a84020000">
+<numeric format="General" low="3" high="8" stdDev="0"/>
+</factor>
+</factorInfo>
+<constraintInfo/>
+<responseInfo>
+<response id="1" name="BENDING" unit="degree" type="Normal" format="General" responseUuId="86181615-f490-406e-99df-3267efed1dce"/>
+</responseInfo>
+<guiState>
+<designLayout>
+<visibleColumns>
+<column type="stdorder">
+<width>35</width>
+</column>
+<column type="runorder">
+<width>35</width>
+</column>
+<column id="A" type="factor">
+<width>95</width>
+</column>
+<column id="B" type="factor">
+<width>95</width>
+</column>
+<column id="C" type="factor">
+<width>95</width>
+</column>
+<column id="D" type="factor">
+<width>95</width>
+</column>
+<column id="E" type="factor">
+<width>95</width>
+</column>
+<column id="1" type="response">
+<width>95</width>
+</column>
+</visibleColumns>
+</designLayout>
+<graphSettings>
+<graphArea name="GraphColumns">
+<selectedGraph>0</selectedGraph>
+<colorBy type="runOrder"/>
+<axisX type="factor" index="1"/>
+<axisY type="factor" index="2"/>
+<axisZ type="none"/>
+<axisX_Histogram type="response" index="0"/>
+<axisX_BoxPlot type="none"/>
+<axisY_BoxPlot type="factor" index="1"/>
+<histograms/>
+<legend key="Scatter2D" title="Design-Expert® Software">
+<dock type="TopLeft"/>
+<showItems>
+<showItem>Response</showItem>
+<showItem>Info</showItem>
+<showItem>ColorGradient</showItem>
+<showItem>Data</showItem>
+<showItem>PointInfo</showItem>
+</showItems>
+</legend>
+</graphArea>
+</graphSettings>
+<perspectives>
+<report name="main_frame" width="1552" height="840">layout2|name=main_toolbar;caption=Toolbar;state=2106108;dir=1;layer=10;row=0;pos=0;prop=100000;bestw=441;besth=37;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=start_screen;caption=;state=258;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=0;besth=0;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=navigation_tree;caption=Navigation Pane;state=5628;dir=4;layer=1;row=0;pos=0;prop=100000;bestw=200;besth=600;minw=40;minh=40;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=node_view;caption=;state=4352;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=16;besth=16;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Design Tool;caption=;state=2110204;dir=1;layer=10;row=0;pos=443;prop=100000;bestw=550;besth=37;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Design Properties;caption=Design Properties;state=2098684;dir=4;layer=1;row=0;pos=1;prop=100000;bestw=200;besth=300;minw=40;minh=40;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=217;floath=340|name=History;caption=History;state=2098686;dir=2;layer=1;row=0;pos=0;prop=100000;bestw=200;besth=300;minw=40;minh=40;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=217;floath=340|dock_size(1,10,0)=39|dock_size(5,0,0)=10|dock_size(4,1,0)=200|</report>
+<report name="report_design_summary_" width="1536" height="864">2fad307065489060003e445200000002=*0|2fad2de065489060003e446500000003=+1,2@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=180;besth=180;minw=180;minh=180;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=2fad307065489060003e445200000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=1326;besth=350;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=2fad2de065489060003e446500000003;caption=;state=2098172;dir=3;layer=2;row=0;pos=0;prop=100000;bestw=1326;besth=357;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|dock_size(3,2,0)=359|</report>
+<report name="report_evaluation_" width="1536" height="864">2fad3fd06548902c003d7c5f00000002=+0,1|2fad2de06548902d003d7c9200000003=+2,4|2fad35906548902d003d7c9500000004=*6,5,3@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=180;besth=180;minw=180;minh=180;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=2fad3fd06548902c003d7c5f00000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=652;besth=678;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=2fad2de06548902d003d7c9200000003;caption=;state=2098172;dir=2;layer=3;row=0;pos=0;prop=100000;bestw=660;besth=336;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=2fad35906548902d003d7c9500000004;caption=;state=2098172;dir=2;layer=3;row=0;pos=1;prop=100000;bestw=660;besth=336;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|dock_size(2,3,0)=662|</report>
+<report name="report_point_prediction_" width="1536" height="864">2fad330065488d9500335b9000000002=+0|2fad3fd065488d9500335b9b00000003=*1@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=180;besth=180;minw=180;minh=180;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=2fad330065488d9500335b9000000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=1326;besth=350;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=2fad3fd065488d9500335b9b00000003;caption=;state=2098172;dir=3;layer=1;row=0;pos=0;prop=100000;bestw=1326;besth=357;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|dock_size(3,1,0)=359|</report>
+</perspectives>
+</guiState>
+<designModel terms="21">
+<designTerm id="0" coef="1" term="Intercept"/>
+<designTerm id="1" coef="1" term="A"/>
+<designTerm id="2" coef="1" term="B"/>
+<designTerm id="3" coef="1" term="C"/>
+<designTerm id="4" coef="1" term="D"/>
+<designTerm id="5" coef="1" term="E"/>
+<designTerm id="6" coef="1" term="AB"/>
+<designTerm id="7" coef="1" term="AC"/>
+<designTerm id="8" coef="1" term="AD"/>
+<designTerm id="9" coef="1" term="AE"/>
+<designTerm id="10" coef="1" term="BC"/>
+<designTerm id="11" coef="1" term="BD"/>
+<designTerm id="12" coef="1" term="BE"/>
+<designTerm id="13" coef="1" term="CD"/>
+<designTerm id="14" coef="1" term="CE"/>
+<designTerm id="15" coef="1" term="DE"/>
+<designTerm id="16" coef="1" term="A^2"/>
+<designTerm id="17" coef="1" term="B^2"/>
+<designTerm id="18" coef="1" term="C^2"/>
+<designTerm id="19" coef="1" term="D^2"/>
+<designTerm id="20" coef="1" term="E^2"/>
+</designModel>
+<run stdNo="15" dsnId="16" runNo="1" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">15</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">8</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="36" dsnId="37" runNo="2" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">20</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">8</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="6" dsnId="7" runNo="3" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">8</facActual>
+<facActual id="D">3</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="8" dsnId="9" runNo="4" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">8</facActual>
+<facActual id="D">8</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="9" dsnId="10" runNo="5" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">15</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">3</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="45" dsnId="42" runNo="6" blockNo="0" blockName="Block 1" pointId="7" pointName="Center" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="24" dsnId="25" runNo="7" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">20</facActual>
+<facActual id="C">8</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="18" dsnId="19" runNo="8" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">8</facActual>
+<facActual id="E">3</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="29" dsnId="30" runNo="9" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">3</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">3</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="25" dsnId="26" runNo="10" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">15</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">3</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="12" dsnId="13" runNo="11" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">20</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">8</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="31" dsnId="32" runNo="12" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">3</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">8</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="43" dsnId="42" runNo="13" blockNo="0" blockName="Block 1" pointId="7" pointName="Center" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="2" dsnId="3" runNo="14" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">20</facActual>
+<facActual id="B">15</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="42" dsnId="42" runNo="15" blockNo="0" blockName="Block 1" pointId="7" pointName="Center" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="13" dsnId="14" runNo="16" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">15</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">3</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="19" dsnId="20" runNo="17" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">3</facActual>
+<facActual id="E">8</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="34" dsnId="35" runNo="18" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">20</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">3</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="30" dsnId="31" runNo="19" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">8</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">3</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="21" dsnId="22" runNo="20" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">15</facActual>
+<facActual id="C">3</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="37" dsnId="38" runNo="21" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">15</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">3</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="23" dsnId="24" runNo="22" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">15</facActual>
+<facActual id="C">8</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="7" dsnId="8" runNo="23" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">3</facActual>
+<facActual id="D">8</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="16" dsnId="17" runNo="24" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">20</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">8</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="33" dsnId="34" runNo="25" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">15</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">3</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="41" dsnId="42" runNo="26" blockNo="0" blockName="Block 1" pointId="7" pointName="Center" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="20" dsnId="21" runNo="27" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">8</facActual>
+<facActual id="E">8</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="28" dsnId="29" runNo="28" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">20</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">8</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="38" dsnId="39" runNo="29" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">20</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">3</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="5" dsnId="6" runNo="30" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">3</facActual>
+<facActual id="D">3</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="39" dsnId="40" runNo="31" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">15</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">8</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="35" dsnId="36" runNo="32" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">15</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">8</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="44" dsnId="42" runNo="33" blockNo="0" blockName="Block 1" pointId="7" pointName="Center" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="32" dsnId="33" runNo="34" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">8</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">8</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="1" dsnId="2" runNo="35" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">15</facActual>
+<facActual id="B">15</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="17" dsnId="18" runNo="36" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">3</facActual>
+<facActual id="E">3</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="22" dsnId="23" runNo="37" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">20</facActual>
+<facActual id="C">3</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="14" dsnId="15" runNo="38" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">20</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">3</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="10" dsnId="11" runNo="39" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">20</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">3</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="40" dsnId="41" runNo="40" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">20</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">8</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="11" dsnId="12" runNo="41" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">17.5</facActual>
+<facActual id="B">15</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">8</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="3" dsnId="4" runNo="42" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">15</facActual>
+<facActual id="B">20</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="4" dsnId="5" runNo="43" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">20</facActual>
+<facActual id="B">20</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">5.5</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="26" dsnId="27" runNo="44" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">20</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">3</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<run stdNo="27" dsnId="28" runNo="45" blockNo="0" blockName="Block 1" pointId="12" pointName="IBFact" buildPointId="5" buildPointName="NA" note="" rowStatus="Normal">
+<facActual id="A">15</facActual>
+<facActual id="B">17.5</facActual>
+<facActual id="C">5.5</facActual>
+<facActual id="D">8</facActual>
+<facActual id="E">5.5</facActual>
+<resVal id="1">Missing</resVal>
+</run>
+<responseModel rmId="1" analysisUuId="4faf48b4-4698-44e6-ba36-ef8c46aff7ec" name="BENDING">
+<response id="1" responseUuId="86181615-f490-406e-99df-3267efed1dce" modelBase="Polynomial" stdDevSource="ANOVA" stdDev="Missing"/>
+<transform id="0" name="None" successLevel="1"/>
+</responseModel>
+<optimization models="7">
+<criteria modType="Factor" id="1" goal="InRange" type="Numeric" target="17.5" limitLow="15" limitHigh="20" weightLow="1" weightHigh="1" overlayLow="Missing" overlayHigh="Missing" importance="3" coding="Actual" scale="Transform" displayScale="Original"/>
+<criteria modType="Factor" id="2" goal="InRange" type="Numeric" target="17.5" limitLow="15" limitHigh="20" weightLow="1" weightHigh="1" overlayLow="Missing" overlayHigh="Missing" importance="3" coding="Actual" scale="Transform" displayScale="Original"/>
+<criteria modType="Factor" id="3" goal="InRange" type="Numeric" target="5.5" limitLow="3" limitHigh="8" weightLow="1" weightHigh="1" overlayLow="Missing" overlayHigh="Missing" importance="3" coding="Actual" scale="Transform" displayScale="Original"/>
+<criteria modType="Factor" id="4" goal="InRange" type="Numeric" target="5.5" limitLow="3" limitHigh="8" weightLow="1" weightHigh="1" overlayLow="Missing" overlayHigh="Missing" importance="3" coding="Actual" scale="Transform" displayScale="Original"/>
+<criteria modType="Factor" id="5" goal="InRange" type="Numeric" target="5.5" limitLow="3" limitHigh="8" weightLow="1" weightHigh="1" overlayLow="Missing" overlayHigh="Missing" importance="3" coding="Actual" scale="Transform" displayScale="Original"/>
+</optimization>
+<buildInfo noOfCenterPoints="5" buildTime="0"/>
+</DEXXMLDoc>

@@ -1,0 +1,96 @@
+# encoding: utf-8
+# 2020 R1
+SetScriptVersion(Version="20.1.164")
+Save(Overwrite=True)
+with Transaction():
+    system1 = GetSystem(Name="Study")
+    geometryModelingComponent1 = Study.CreateTask(
+        Type="Geometry Modeling",
+        System=system1)
+    modeling1 = geometryModelingComponent1.GetTaskObject()
+    modeling1.SetImportPath(FilePath="D:/Study Materials/Thesis/New_design/new(for_FSI).STEP")
+    geometryModelingComponent1.Update(AllDependencies=True)
+with Transaction():
+    physicsDefinitionComponent1 = Study.CreateTask(
+        Type="Physics Definition",
+        System=system1,
+        Input=geometryModelingComponent1)
+    physicsDefinitionComponent1.Refresh()
+    physicsDefinition1 = physicsDefinitionComponent1.GetTaskObject()
+    physicsDefinition1.CalculationType = "Static"
+    study1 = system1.GetContainer(ComponentName="Study")
+    solverSettings1 = study1.CreateEntity(
+        Type="SolverSettings",
+        Association=physicsDefinition1)
+    meshModelingComponent1 = Study.CreateTask(
+        Type="Mesh Modeling",
+        System=system1,
+        Input=physicsDefinitionComponent1)
+    meshModelingComponent1.Refresh()
+    solvePhysicsComponent1 = Study.CreateTask(
+        Type="Solve Physics",
+        System=system1,
+        Input=meshModelingComponent1)
+    solvePhysicsComponent1.Refresh()
+    physicsSolutionGroup1 = Study.CreateGroup(Name="Physics Solution")
+    physicsSolutionGroup1.Add(Component=physicsDefinitionComponent1)
+    physicsSolutionGroup1.Add(Component=meshModelingComponent1)
+    AddSourceToComponentInSystem(
+        SourceComponent=physicsDefinitionComponent1,
+        TargetComponent=solvePhysicsComponent1)
+    physicsSolutionGroup1.Add(Component=solvePhysicsComponent1)
+    physicsSolutionGroup1.DisplayText = "Flow"
+    physicsRegion1 = study1.CreateEntity(
+        Type="PhysicsRegion",
+        Association=physicsDefinition1)
+    physicsRegion1.PhysicsType = "Fluid"
+    physicsRegion1.Location = []
+    materialAssignment1 = study1.CreateEntity(
+        Type="MaterialAssignment",
+        Association=physicsDefinition1)
+    material1 = study1.CreateEntity(
+        Type="Material",
+        Association=physicsDefinition1)
+    material1.ImportEngineeringData(Name="Air")
+    materialAssignment1.Material = material1
+    materialAssignment1.Location = [physicsRegion1]
+    wallCondition1 = study1.CreateEntity(
+        Type="WallBoundary",
+        Association=physicsRegion1)
+    physicsOptions1 = study1.GetPhysicsOptions(Name="PhysicsOptions 1")
+    physicsOptions1.TurbulenceModel.RANSModel.CurvatureCorrection = "Off"
+    transcript1 = study1.CreateEntity(
+        Type="Transcript",
+        Association=physicsDefinition1)
+    transcript1.DisplayText = "Fluid Flow Output 1"
+    resultsEvaluationComponent1 = Study.CreateTask(
+        Type="Results Evaluation",
+        System=system1,
+        Input=solvePhysicsComponent1)
+    AddSourceToComponentInSystem(
+        SourceComponent=physicsDefinitionComponent1,
+        TargetComponent=resultsEvaluationComponent1)
+    resultsEvaluationComponent1.Refresh()
+    results1 = resultsEvaluationComponent1.GetTaskObject()
+    vectorResult1 = study1.CreateEntity(
+        Type="VectorResult",
+        Association=results1)
+    vectorResult1.Variable = "Velocity"
+    vectorResult1.EvaluateFullRange = False
+    regionInterfaceGenerator1 = study1.CreateEntity(
+        Type="RegionInterfaceGenerator",
+        Association=physicsDefinition1)
+    regionInterfaceGenerator1.Generate()
+Modeling.ReloadDocument(ModelingAnchor=modeling1)
+with Transaction():
+    geometryModelingComponent1.Update(AllDependencies=True)
+    physicsDefinitionComponent1.Refresh()
+    meshModelingComponent1.Refresh()
+    solvePhysicsComponent1.Refresh()
+    resultsEvaluationComponent1.Refresh()
+physicsRegion1.Location = ["BODY2"]
+inletCondition1 = study1.CreateEntity(
+    Type="InletBoundary",
+    Association=physicsRegion1,
+    Location=["FACE163"])
+inletCondition1.Flow.Velocity.Magnitude = "10 [m s^-1]"

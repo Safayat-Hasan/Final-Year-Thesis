@@ -1,0 +1,19 @@
+# encoding: utf-8
+# 2020 R1
+SetScriptVersion(Version="20.1.164")
+with Transaction():
+    system1 = GetSystem(Name="Study")
+    solvePhysicsComponent1 = system1.GetComponent(Name="Solve Physics")
+    solvePhysicsComponent1.Update(AllDependencies=True)
+    resultsEvaluationComponent1 = system1.GetComponent(Name="Results Evaluation")
+    resultsEvaluationComponent1.Refresh()
+resultsEvaluationComponent1.Update(AllDependencies=True)
+with Transaction():
+    study1 = system1.GetContainer(ComponentName="Study")
+    results1 = resultsEvaluationComponent1.GetTaskObject()
+    streamLine1 = study1.CreateEntity(
+        Type="StreamLine",
+        Association=results1)
+    streamLine1.EvaluateFullRange = False
+physicsRegion1 = study1.GetPhysicsRegion(Name="PhysicsRegion 1")
+streamLine1.Location = [physicsRegion1]

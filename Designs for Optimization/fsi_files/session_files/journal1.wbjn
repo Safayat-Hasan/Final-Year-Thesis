@@ -1,0 +1,533 @@
+# encoding: utf-8
+# 2020 R1
+SetScriptVersion(Version="20.1.164")
+with Transaction():
+    system1 = GetSystem(Name="Study")
+    geometryModelingComponent1 = Study.CreateTask(
+        Type="Geometry Modeling",
+        System=system1)
+    modeling1 = geometryModelingComponent1.GetTaskObject()
+    modeling1.SetImportPath(FilePath="D:/Study Materials/Thesis/New_design/new(for_FSI).STEP")
+    geometryModelingComponent1.Update(AllDependencies=True)
+Modeling.ReloadDocument(ModelingAnchor=modeling1)
+geometryModelingComponent1.Update(AllDependencies=True)
+with Transaction():
+    meshingComponent1 = Study.CreateTask(
+        Type="Meshing",
+        System=system1,
+        Input=geometryModelingComponent1)
+    meshing1 = meshingComponent1.GetTaskObject()
+    meshing1.EngineeringIntent = "FluidFlow"
+    meshingComponent1.Refresh()
+    study1 = system1.GetContainer(ComponentName="Study")
+    meshControlLocalBoundaryLayer1 = study1.CreateEntity(
+        Type="MeshControlLocalBoundaryLayer",
+        Association=meshing1)
+    meshControlLocalBoundaryLayer1.MaximumLayers = 5
+    meshingComponent1.Refresh()
+    meshControlElementShape1 = study1.CreateEntity(
+        Type="MeshControlElementShape",
+        Association=meshing1)
+    meshControlElementShape1.Location = "AllBodies()"
+    meshControlElementShape1.Shape = "Tetrahedrons"
+    meshingComponent1.Refresh()
+    physicsDefinitionComponent1 = Study.CreateTask(
+        Type="Physics Definition",
+        System=system1,
+        Input=meshingComponent1)
+    physicsDefinitionComponent1.Refresh()
+    physicsDefinition1 = physicsDefinitionComponent1.GetTaskObject()
+    physicsDefinition1.CalculationType = "Static"
+    solverSettings1 = study1.CreateEntity(
+        Type="SolverSettings",
+        Association=physicsDefinition1)
+    meshModelingComponent1 = Study.CreateTask(
+        Type="Mesh Modeling",
+        System=system1,
+        Input=physicsDefinitionComponent1)
+    meshModelingComponent1.Refresh()
+    solvePhysicsComponent1 = Study.CreateTask(
+        Type="Solve Physics",
+        System=system1,
+        Input=meshModelingComponent1)
+    solvePhysicsComponent1.Refresh()
+    physicsSolutionGroup1 = Study.CreateGroup(Name="Physics Solution")
+    physicsSolutionGroup1.Add(Component=physicsDefinitionComponent1)
+    physicsSolutionGroup1.Add(Component=meshModelingComponent1)
+    AddSourceToComponentInSystem(
+        SourceComponent=physicsDefinitionComponent1,
+        TargetComponent=solvePhysicsComponent1)
+    physicsSolutionGroup1.Add(Component=solvePhysicsComponent1)
+    physicsSolutionGroup1.DisplayText = "Flow"
+    meshingComponent2 = Study.CreateTask(
+        Type="Meshing",
+        System=system1,
+        Input=geometryModelingComponent1)
+    meshing2 = meshingComponent2.GetTaskObject()
+    meshing2.EngineeringIntent = "StructuralOrThermalOrElectricConduction"
+    meshingComponent2.Refresh()
+    physicsDefinitionComponent2 = Study.CreateTask(
+        Type="Physics Definition",
+        System=system1,
+        Input=meshingComponent2)
+    physicsDefinitionComponent2.Refresh()
+    physicsDefinition2 = physicsDefinitionComponent2.GetTaskObject()
+    physicsDefinition2.CalculationType = "Static"
+    solverSettings2 = study1.CreateEntity(
+        Type="SolverSettings",
+        Association=physicsDefinition2)
+    meshModelingComponent2 = Study.CreateTask(
+        Type="Mesh Modeling",
+        System=system1,
+        Input=physicsDefinitionComponent2)
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2 = Study.CreateTask(
+        Type="Solve Physics",
+        System=system1,
+        Input=meshModelingComponent2)
+    solvePhysicsComponent2.Refresh()
+    physicsSolutionGroup2 = Study.CreateGroup(Name="Physics Solution")
+    physicsSolutionGroup2.Add(Component=physicsDefinitionComponent2)
+    physicsSolutionGroup2.Add(Component=meshModelingComponent2)
+    AddSourceToComponentInSystem(
+        SourceComponent=physicsDefinitionComponent2,
+        TargetComponent=solvePhysicsComponent2)
+    physicsSolutionGroup2.Add(Component=solvePhysicsComponent2)
+    physicsSolutionGroup2.DisplayText = "Structural"
+    physicsRegion1 = study1.CreateEntity(
+        Type="PhysicsRegion",
+        Association=physicsDefinition1)
+    physicsRegion1.PhysicsType = "Fluid, Thermal"
+    physicsRegion1.Location = ["BODY2"]
+    materialAssignment1 = study1.CreateEntity(
+        Type="MaterialAssignment",
+        Association=physicsDefinition1)
+    material1 = study1.CreateEntity(
+        Type="Material",
+        Association=physicsDefinition1)
+    material1.ImportEngineeringData(Name="Air")
+    materialAssignment1.Material = material1
+    materialAssignment1.Location = [physicsRegion1]
+    physicsOptions1 = study1.GetPhysicsOptions(Name="PhysicsOptions 1")
+    physicsOptions1.TurbulenceModel.RANSModel.CurvatureCorrection = "Off"
+    transcript1 = study1.CreateEntity(
+        Type="Transcript",
+        Association=physicsDefinition1)
+    transcript1.DisplayText = "Fluid Flow Output 1"
+    resultsEvaluationComponent1 = Study.CreateTask(
+        Type="Results Evaluation",
+        System=system1,
+        Input=solvePhysicsComponent1)
+    AddSourceToComponentInSystem(
+        SourceComponent=physicsDefinitionComponent1,
+        TargetComponent=resultsEvaluationComponent1)
+    resultsEvaluationComponent1.Refresh()
+    results1 = resultsEvaluationComponent1.GetTaskObject()
+    vectorResult1 = study1.CreateEntity(
+        Type="VectorResult",
+        Association=results1)
+    vectorResult1.Variable = "Velocity"
+    vectorResult1.EvaluateFullRange = False
+    plane1 = study1.CreateEntity(
+        Type="Plane",
+        Association=results1)
+    contourResult1 = study1.CreateEntity(
+        Type="ContourResult",
+        Association=results1)
+    contourResult1.Variable = "Temperature"
+    contourResult1.Location = [plane1]
+    contourResult1.EvaluateFullRange = False
+    physicsRegion2 = study1.CreateEntity(
+        Type="PhysicsRegion",
+        Association=physicsDefinition1)
+    physicsRegion2.PhysicsType = "Thermal"
+    physicsRegion2.Location = ["BODY1"]
+    materialAssignment2 = study1.CreateEntity(
+        Type="MaterialAssignment",
+        Association=physicsDefinition1)
+    material2 = study1.CreateEntity(
+        Type="Material",
+        Association=physicsDefinition1)
+    material2.ImportEngineeringData(Name="Silicon")
+    materialAssignment2.Material = material2
+    materialAssignment2.Location = ["BODY1"]
+    regionInterfaceGenerator1 = study1.CreateEntity(
+        Type="RegionInterfaceGenerator",
+        Association=physicsDefinition1)
+    regionInterfaceGenerator1.Generate()
+    physicsRegion3 = study1.CreateEntity(
+        Type="PhysicsRegion",
+        Association=physicsDefinition2)
+    physicsRegion3.PhysicsType = "Structural"
+    physicsRegion3.Location = ["BODY1"]
+    materialAssignment3 = study1.CreateEntity(
+        Type="MaterialAssignment",
+        Association=physicsDefinition2)
+    material3 = study1.CreateEntity(
+        Type="Material",
+        Association=physicsDefinition2)
+    material3.ImportEngineeringData(Name="Silicon")
+    materialAssignment3.Material = material3
+    materialAssignment3.Location = ["BODY1"]
+    materialAssignment4 = study1.CreateEntity(
+        Type="MaterialAssignment",
+        Association=physicsDefinition2)
+    material4 = study1.CreateEntity(
+        Type="Material",
+        Association=physicsDefinition2)
+    material4.ImportEngineeringData(Name="Air")
+    materialAssignment4.Material = material4
+    materialAssignment4.Location = ["BODY2"]
+    AddSourceToComponentInSystem(
+        SourceComponent=physicsDefinitionComponent1,
+        TargetComponent=physicsDefinitionComponent2)
+    transcript2 = study1.CreateEntity(
+        Type="Transcript",
+        Association=physicsDefinition2)
+    transcript2.DisplayText = "Structural Output 2"
+    interfaceGenerator1 = study1.CreateEntity(
+        Type="InterfaceGenerator",
+        Association=physicsDefinition2)
+    interfaceGenerator1.Location = [physicsRegion3]
+    interfaceGenerator1.GenerateInteractions()
+    resultsEvaluationComponent2 = Study.CreateTask(
+        Type="Results Evaluation",
+        System=system1,
+        Input=solvePhysicsComponent2)
+    AddSourceToComponentInSystem(
+        SourceComponent=physicsDefinitionComponent2,
+        TargetComponent=resultsEvaluationComponent2)
+    resultsEvaluationComponent2.Refresh()
+    results2 = resultsEvaluationComponent2.GetTaskObject()
+    contourResult2 = study1.CreateEntity(
+        Type="ContourResult",
+        Association=results2)
+    contourResult2.Variable = "Stress.eqv"
+    contourResult2.EvaluateFullRange = False
+    contourResult3 = study1.CreateEntity(
+        Type="ContourResult",
+        Association=results2)
+    contourResult3.Variable = "Displacement.mag"
+    contourResult3.EvaluateFullRange = False
+    transcript3 = study1.CreateEntity(
+        Type="Transcript",
+        Association=physicsDefinition2)
+    transcript3.DisplayText = "Physics Coupling Output 3"
+    transcript3.SourceType = "PhysicsCouplingDiagnostic"
+    physicsCoupling1 = study1.CreateEntity(
+        Type="PhysicsCoupling",
+        Association=physicsDefinition2)
+    physicsCoupling1.PhysicsRegion1 = physicsRegion2
+    physicsCoupling1.Side1Location = "AllCouplingSourceBodies()"
+    physicsCoupling1.DisplayText = "Temperature Transfer 1"
+    Study.Delete(Items=[regionInterfaceGenerator1])
+    regionInterfaceGenerator2 = study1.CreateEntity(
+        Type="RegionInterfaceGenerator",
+        Association=physicsDefinition1)
+    regionInterfaceGenerator2.Generate()
+    physicsCoupling2 = study1.CreateEntity(
+        Type="PhysicsCoupling",
+        Association=physicsDefinition2)
+    physicsCoupling2.PhysicsRegion1 = physicsRegion1
+    physicsCoupling2.Side1Location = "AllCouplingSourceFaces()"
+    physicsCoupling2.DisplayText = "Force Transfer 1"
+    physicsCoupling2.Side2Locations = ["FACE19", "FACE29", "FACE39", "FACE49", "FACE59", "FACE12", "FACE22", "FACE32", "FACE42", "FACE52", "FACE62", "FACE16", "FACE26", "FACE36", "FACE46", "FACE56", "FACE13", "FACE23", "FACE33", "FACE43", "FACE53", "FACE63", "FACE2", "FACE3", "FACE4", "FACE5", "FACE6", "FACE7", "FACE8", "FACE9", "FACE17", "FACE27", "FACE37", "FACE47", "FACE57", "FACE10", "FACE20", "FACE30", "FACE40", "FACE50", "FACE60", "FACE14", "FACE24", "FACE34", "FACE44", "FACE54", "FACE64", "FACE11", "FACE21", "FACE31", "FACE41", "FACE51", "FACE61", "FACE18", "FACE28", "FACE38", "FACE48", "FACE58", "FACE15", "FACE25", "FACE35", "FACE45", "FACE55"]
+Modeling.ReloadDocument(ModelingAnchor=modeling1)
+with Transaction():
+    geometryModelingComponent1.Update(AllDependencies=True)
+    meshingComponent1.Refresh()
+    meshingComponent2.Refresh()
+    physicsDefinitionComponent1.Refresh()
+    meshModelingComponent1.Refresh()
+    solvePhysicsComponent1.Refresh()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent1.Refresh()
+    resultsEvaluationComponent2.Refresh()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent2.Refresh()
+selectionSet1 = study1.GetSelectionSet(Name="SelectionSet 3")
+meshControlLocalBoundaryLayer1.Location = [selectionSet1]
+meshControlElementShape1.Shape = "Automatic"
+with Transaction():
+    meshingComponent1.Update(AllDependencies=True)
+    physicsDefinitionComponent1.Refresh()
+    meshModelingComponent1.Refresh()
+    solvePhysicsComponent1.Refresh()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent1.Refresh()
+    resultsEvaluationComponent2.Refresh()
+meshDiagnostics1 = study1.CreateEntity(
+    Type="MeshDiagnostics",
+    Association=meshing1)
+meshDiagnostics1.MeshMetric = "Skewness"
+selectionSet2 = study1.GetSelectionSet(Name="SelectionSet 5")
+physicsRegion1.Location = [selectionSet2]
+selectionSet3 = study1.GetSelectionSet(Name="SelectionSet 2")
+physicsRegion2.Location = [selectionSet3]
+materialAssignment2.Location = [physicsRegion2]
+inletCondition1 = study1.CreateEntity(
+    Type="InletBoundary",
+    Association=physicsRegion1)
+selectionSet4 = study1.GetSelectionSet(Name="SelectionSet 4")
+inletCondition1.Location = [selectionSet4]
+inletCondition1.Flow.Velocity.Magnitude = "15 [m s^-1]"
+inletCondition1.Energy.Temperature = "20 [C]"
+with Transaction():
+    regionInterfaceGenerator2.Generate()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent1.Refresh()
+    resultsEvaluationComponent2.Refresh()
+Modeling.ReloadDocument(ModelingAnchor=modeling1)
+with Transaction():
+    geometryModelingComponent1.Update(AllDependencies=True)
+    meshingComponent1.Refresh()
+    meshingComponent2.Refresh()
+    physicsDefinitionComponent1.Refresh()
+    meshModelingComponent1.Refresh()
+    solvePhysicsComponent1.Refresh()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent1.Refresh()
+    resultsEvaluationComponent2.Refresh()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent2.Refresh()
+with Transaction():
+    meshingComponent1.Update(AllDependencies=True)
+    physicsDefinitionComponent1.Refresh()
+    meshModelingComponent1.Refresh()
+    solvePhysicsComponent1.Refresh()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent1.Refresh()
+    resultsEvaluationComponent2.Refresh()
+convectionCondition1 = study1.CreateEntity(
+    Type="ConvectionBoundary",
+    Association=physicsRegion2)
+selectionSet5 = study1.GetSelectionSet(Name="SelectionSet 6")
+convectionCondition1.Location = [selectionSet5]
+convectionCondition1.Energy.HeatTransferCoefficient = "10 [W m^-2 C^-1]"
+convectionCondition1.Energy.ConvectionTemperature = "20 [C]"
+insulatedCondition1 = study1.CreateEntity(
+    Type="InsulatedBoundary",
+    Association=physicsRegion2)
+with Transaction():
+    regionInterfaceGenerator2.Generate()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent1.Refresh()
+    resultsEvaluationComponent2.Refresh()
+materialAssignment5 = study1.CreateEntity(
+    Type="MaterialAssignment",
+    Association=physicsDefinition1)
+with Transaction():
+    material5 = study1.CreateEntity(
+        Type="Material",
+        Association=physicsDefinition1)
+    material5.ImportEngineeringData(Name="Silicon")
+    materialAssignment5.Material = material5
+materialAssignment5.Location = [physicsRegion2]
+Study.Delete(Items=[materialAssignment2])
+regionInterface1 = study1.GetRegionInterface(Name="RegionInterface 4")
+Study.Delete(Items=[regionInterface1])
+solverSettings1.LaunchControls.NumberOfProcessors = "4"
+physicsRegion2.Location = '["/Study/SelectionSet:SelectionSet 2", "BODY1"]'
+physicsRegion2.Location = []
+physicsRegion2.Location = [selectionSet3]
+materialAssignment1.Location = [physicsRegion1]
+with Transaction():
+    material6 = study1.CreateEntity(
+        Type="Material",
+        Association=physicsDefinition1)
+    material6.ImportEngineeringData(Name="Air")
+    materialAssignment1.Material = material6
+Study.Delete(Items=[materialAssignment4])
+Study.Delete(Items=[regionInterfaceGenerator2])
+regionInterface2 = study1.CreateEntity(
+    Type="RegionInterface",
+    Association=physicsDefinition1)
+Study.Delete(Items=[regionInterface2])
+regionInterfaceGenerator3 = study1.CreateEntity(
+    Type="RegionInterfaceGenerator",
+    Association=physicsDefinition1)
+with Transaction():
+    regionInterfaceGenerator3.Generate()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent1.Refresh()
+    resultsEvaluationComponent2.Refresh()
+with Transaction():
+    meshingComponent2.Update(AllDependencies=True)
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent2.Refresh()
+physicsRegion3.Location = [selectionSet3]
+materialAssignment3.Location = [physicsRegion3]
+Modeling.ReloadDocument(ModelingAnchor=modeling1)
+with Transaction():
+    geometryModelingComponent1.Update(AllDependencies=True)
+    meshingComponent1.Refresh()
+    meshingComponent2.Refresh()
+    physicsDefinitionComponent1.Refresh()
+    meshModelingComponent1.Refresh()
+    solvePhysicsComponent1.Refresh()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent1.Refresh()
+    resultsEvaluationComponent2.Refresh()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent2.Refresh()
+with Transaction():
+    meshingComponent1.Update(AllDependencies=True)
+    physicsDefinitionComponent1.Refresh()
+    meshModelingComponent1.Refresh()
+    solvePhysicsComponent1.Refresh()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent1.Refresh()
+    resultsEvaluationComponent2.Refresh()
+with Transaction():
+    meshingComponent2.Update(AllDependencies=True)
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent2.Refresh()
+support1 = study1.CreateEntity(
+    Type="Support",
+    Association=physicsDefinition2)
+selectionSet6 = study1.GetSelectionSet(Name="SelectionSet 8")
+support1.Location = [selectionSet6]
+with Transaction():
+    regionInterfaceGenerator3.Generate()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent1.Refresh()
+    resultsEvaluationComponent2.Refresh()
+physicsCoupling1.Side2Locations = [selectionSet3]
+selectionSet7 = study1.GetSelectionSet(Name="SelectionSet 1")
+physicsCoupling2.Side2Locations = [selectionSet7]
+regionInterface3 = study1.GetRegionInterface(Name="RegionInterface 7")
+regionInterface3.Location2 = [selectionSet1]
+regionInterface3.Location2 = []
+regionInterface3.Location1 = [selectionSet3]
+regionInterface3.Location1 = [selectionSet7]
+regionInterface3.Location2 = [selectionSet1]
+regionInterface3.Location2 = [selectionSet2]
+regionInterface3.Location2 = [selectionSet1]
+regionInterface3.Location1 = [selectionSet5]
+regionInterface3.Location1 = [selectionSet7]
+regionInterface3.PhysicsRegions1 = [physicsRegion1]
+regionInterface3.Location1 = [selectionSet1]
+regionInterface3.PhysicsRegions2 = [physicsRegion2]
+regionInterface3.Location2 = [selectionSet7]
+regionInterface3.PhysicsRegions1 = [physicsRegion2]
+regionInterface3.Location1 = [selectionSet7]
+regionInterface3.PhysicsRegions2 = [physicsRegion1]
+regionInterface3.Location2 = [selectionSet1]
+solverSettings1.LaunchControls.NumberOfProcessors = "2"
+Modeling.ReloadDocument(ModelingAnchor=modeling1)
+with Transaction():
+    geometryModelingComponent1.Update(AllDependencies=True)
+    meshingComponent1.Refresh()
+    meshingComponent2.Refresh()
+    physicsDefinitionComponent1.Refresh()
+    meshModelingComponent1.Refresh()
+    solvePhysicsComponent1.Refresh()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent1.Refresh()
+    resultsEvaluationComponent2.Refresh()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent2.Refresh()
+Modeling.ReloadDocument(ModelingAnchor=modeling1)
+with Transaction():
+    geometryModelingComponent1.Update(AllDependencies=True)
+    meshingComponent1.Refresh()
+    meshingComponent2.Refresh()
+    physicsDefinitionComponent1.Refresh()
+    meshModelingComponent1.Refresh()
+    solvePhysicsComponent1.Refresh()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent1.Refresh()
+    resultsEvaluationComponent2.Refresh()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent2.Refresh()
+Study.Delete(Items=[convectionCondition1])
+Study.Delete(Items=[insulatedCondition1])
+with Transaction():
+    meshingComponent1.Update(AllDependencies=True)
+    physicsDefinitionComponent1.Refresh()
+    meshModelingComponent1.Refresh()
+    solvePhysicsComponent1.Refresh()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent1.Refresh()
+    resultsEvaluationComponent2.Refresh()
+with Transaction():
+    meshingComponent2.Update(AllDependencies=True)
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent2.Refresh()
+with Transaction():
+    regionInterfaceGenerator3.Generate()
+    physicsDefinitionComponent2.Refresh()
+    meshModelingComponent2.Refresh()
+    solvePhysicsComponent2.Refresh()
+    resultsEvaluationComponent1.Refresh()
+    resultsEvaluationComponent2.Refresh()
+regionInterface4 = study1.GetRegionInterface(Name="RegionInterface 8")
+regionInterface4.Location1 = [selectionSet7]
+regionInterface4.Location2 = [selectionSet1]
+Study.Delete(Items=[regionInterface4])
+Study.Delete(Items=[material5])
+Study.Delete(Items=[material6])
+with Transaction():
+    material7 = study1.CreateEntity(
+        Type="Material",
+        Association=physicsDefinition1)
+    material7.ImportEngineeringData(Name="Air")
+    materialAssignment1.Material = material7
+materialAssignment5.Location = [physicsRegion2]
+with Transaction():
+    material8 = study1.CreateEntity(
+        Type="Material",
+        Association=physicsDefinition1)
+    material8.ImportEngineeringData(Name="Silicon")
+    materialAssignment5.Material = material8
+physicsRegion2.PhysicsType = "Fluid, Thermal"
+physicsCoupling1.Side2Locations = [selectionSet5]
+physicsCoupling1.Side1Location = "AllCouplingSourceFaces()"
+Save(Overwrite=True)
+physicsRegion2.PhysicsType = "Thermal"
+physicsCoupling1.Side2Locations = [selectionSet3]
+physicsCoupling1.Side1Location = "SelectionSet 2"
+physicsCoupling1.Side1Location = "AllCouplingSourceBodies()"
+Save(Overwrite=True)

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Storage>
+  <Project Version="9.1" />
+  <Addins>
+    <addin-list valType="String">[Ansys.ParameterManager.ParameterManagerAddin, Ansys.Study.Addin.Addin, Ansys.Modeling.Core.Addin]</addin-list>
+    <Addin Name="Ansys.ParameterManager.ParameterManagerAddin" Version="7.3" />
+    <Addin Name="Ansys.Study.Addin.Addin" Version="20.1.0.2019120323" />
+    <Addin Name="Ansys.Modeling.Core.Addin" Version="1.0" />
+  </Addins>
+  <Containers>
+    <container-map valType="String">{"Scopes": Ansys.ParameterManager.ParameterManagerAddin:scopes, "Study": Ansys.Study.Addin.Addin:Study, "Modeling": Ansys.Modeling.Core.Addin:Static}</container-map>
+    <static-container-ids valType="String">{"Scopes": Scopes, "Modeling": ModelingStaticContainer}</static-container-ids>
+    <Container Name="Scopes" Version="1.0">
+      <container-type valType="String">Ansys.ParameterManager.ParameterManagerAddin:scopes</container-type>
+      <static-id valType="String">Scopes</static-id>
+      <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
+      <deleted-sources valType="String">[]</deleted-sources>
+      <last-updated valType="Int64">0</last-updated>
+      <last-modified-by-usage valType="String">{"Extrinsic": 1375, "Input": 1660, "Output": 1375}</last-modified-by-usage>
+      <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
+      <contains-significant-data valType="Boolean">false</contains-significant-data>
+      <Object Name="/Scopes/GlobalScope:GlobalScope" Version="1.0">
+        <class-type valType="String">GlobalScope</class-type>
+        <object-name valType="String">GlobalScope</object-name>
+        <member-data valType="String">{"DisplayText": "GlobalScope", "_fieldExpressionValidationContext": None, "functionProviders": [], "Parent": None}</member-data>
+      </Object>
+      <Object Name="/Scopes/Scope:Scope" Version="1.0">
+        <class-type valType="String">Scope</class-type>
+        <object-name valType="String">Scope</object-name>
+        <member-data valType="String">{"DisplayText": "Scope", "_fieldExpressionValidationContext": $$655515fd-2e24-4c7a-89f8-ec503fcea554, "functionProviders": [$$9b53d0c9-d62b-4c43-b837-9923069dd54b, $$5d59ba82-895c-4194-bc34-70a863790691, $$61dfbd73-5df1-41d4-8017-7a516512694c, $$4ccdb8ed-933c-426e-85da-ac9790af8773, $$f671a392-9cd4-4dbd-a26e-e770c77e5000], "Parent": $$235050e5-e7f5-409f-9108-d117ac99e549, "entities": [], "containersDict": {}}</member-data>
+      </Object>
+    </Container>
+    <Container Name="Study" Version="1.0">
+      <container-type valType="String">Ansys.Study.Addin.Addin:Study</container-type>
+      <StudySessionId valType="String">d80a6fff-d3be-4bdc-8ea0-b9e30bcc8c18</StudySessionId>
+      <StudyBufferSize valType="Int32">239382</StudyBufferSize>
+      <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
+      <deleted-sources valType="String">[]</deleted-sources>
+      <last-updated valType="Int64">0</last-updated>
+      <last-modified-by-usage valType="String">{"Extrinsic": 1665, "Input": 1659, "Output": 1652}</last-modified-by-usage>
+      <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
+      <last-update-regen-times valType="String">{"Preferences": 0, "MaterialDataContainer": 0, "FileTypesContainer": 0, "FileContainer": 0, "Messages": 0, "Scopes": 0, "Parameters": 0, "Schematic": 0, "ReportDataContainer": 0, "Graphics": 0, "Units": 0, "Study": 0}</last-update-regen-times>
+      <unique-system-dir valType="String">Study</unique-system-dir>
+      <contains-significant-data valType="Boolean">false</contains-significant-data>
+      <Object Name="/Study/Simulation:Simulation 1" Version="1.0">
+        <class-type valType="String">Simulation</class-type>
+        <object-name valType="String">Simulation 1</object-name>
+        <member-data valType="String">{"DisplayText": "Study", "DatabaseId": 1, "SuppressedProperties": [], "ExtensionObjectTypeStrings": {}, "_state": {"ValidationState": "Invalid"}, "_isSuppressed": False, "OwnerProxy": None, "NamingMethod": "Automatic", "SystemTags": None, "EngTopoRelMgr": {"DisplayText": "EngineeringTopologyRelMgr", "_registeredModelIdList": [], "_parentChildRelMap": {}, "_engTopoRefMap": {}, "_engTopoFileMgr": {}, "_engRefToModelMapCache": {"_refToModelMapCache": {}}}, "NavigationManager": {"DisplayText": "UserObjectNavigationManager", "_userObjectsNotNavigable": [$$df029ff9-5c22-4b33-9c51-b30dca7c7434]}}</member-data>
+        <custom-data>
+          <SimulationVersionPersistenceKey valType="String">20.1.0.2019120323</SimulationVersionPersistenceKey>
+          <TagManagerTagsPersistenceKey valType="String">[]</TagManagerTagsPersistenceKey>
+          <TagManagerTagUsagePersistenceKey valType="String">{}</TagManagerTagUsagePersistenceKey>
+          <UserObjectVersionPersistenceKey valType="String">20.1.0.2019120323</UserObjectVersionPersistenceKey>
+          <ChildrenTypeStringMapPersistenceKey valType="String">["$$543f8636-1ba6-441e-aa66-d457a9ed4bb3"]</ChildrenTypeStringMapPersistenceKey>
+          <SharedBehaviorPersistenceKey valType="String">20.1.0.2019120323</SharedBehaviorPersistenceKey>
+          <value-keys valType="String">{"SimulationVersionPersistenceKey": System.String, "TagManagerTagsPersistenceKey": System.String, "TagManagerTagUsagePersistenceKey": System.String, "UserObjectVersionPersistenceKey": System.String, "ChildrenTypeStringMapPersistenceKey": System.String, "SharedBehaviorPersistenceKey": System.String}</value-keys>
+        </custom-data>
+      </Object>
+      <Object Name="/Study/ExpressionValidationContext:ExpressionValidationContext 1" Version="1.0">
+        <class-type valType="String">ExpressionValidationContext</class-type>
+        <object-name valType="String">ExpressionValidationContext 1</object-name>
+        <member-data valType="String">{"DisplayText": "ExpressionValidationContext 1", "DatabaseId": 2, "SuppressedProperties": [], "ExtensionObjectTypeStrings": {}, "_state": {"ValidationState": "Invalid"}, "_isSuppressed": False, "OwnerProxy": None, "NamingMethod": "Automatic", "SystemTags": None}</member-data>
+        <custom-data>
+          <UserObjectVersionPersistenceKey valType="String">20.1.0.2019120323</UserObjectVersionPersistenceKey>
+          <ChildrenTypeStringMapPersistenceKey valType="String">[]</ChildrenTypeStringMapPersistenceKey>
+          <SharedBehaviorPersistenceKey valType="String">20.1.0.2019120323</SharedBehaviorPersistenceKey>
+          <value-keys valType="String">{"UserObjectVersionPersistenceKey": System.String, "ChildrenTypeStringMapPersistenceKey": System.String, "SharedBehaviorPersistenceKey": System.String}</value-keys>
+        </custom-data>
+      </Object>
+      <Object Name="/Study/ExpressionScopeMap:ExpressionScopeMap 1" Version="1.0">
+        <class-type valType="String">ExpressionScopeMap</class-type>
+        <object-name valType="String">ExpressionScopeMap 1</object-name>
+        <member-data valType="String">{"DisplayText": "ExpressionScopeMap", "_scopeReferences": {"$$655515fd-2e24-4c7a-89f8-ec503fcea554": $$83f92751-0db8-4aa8-a715-f1942666484d}}</member-data>
+      </Object>
+      <Object Name="/Study/ImportedObjectRelationTable:ImportedObjectRelationTable 1" Version="1.0">
+        <class-type valType="String">ImportedObjectRelationTable</class-type>
+        <object-name valType="String">ImportedObjectRelationTable 1</object-name>
+        <member-data valType="String">{"DisplayText": "ImportedObjectRelationTable"}</member-data>
+        <custom-data>
+          <ImportedObjectRelationTableVersionPersistenceKey valType="String">20.1.0.2019120323</ImportedObjectRelationTableVersionPersistenceKey>
+          <PersistedImportedObjectTable valType="String">{}</PersistedImportedObjectTable>
+          <value-keys valType="String">{"ImportedObjectRelationTableVersionPersistenceKey": System.String, "PersistedImportedObjectTable": System.String}</value-keys>
+        </custom-data>
+      </Object>
+      <Object Name="/Study/GlobalObjects:GlobalObjects 1" Version="1.0">
+        <class-type valType="String">GlobalObjects</class-type>
+        <object-name valType="String">GlobalObjects 1</object-name>
+        <member-data valType="String">{"DisplayText": "GlobalObjects 1", "DatabaseId": 3, "SuppressedProperties": [], "ExtensionObjectTypeStrings": {}, "_state": {"ValidationState": "Valid"}, "_isSuppressed": False, "OwnerProxy": None, "NamingMethod": "Automatic", "SystemTags": None}</member-data>
+        <custom-data>
+          <UserObjectVersionPersistenceKey valType="String">20.1.0.2019120323</UserObjectVersionPersistenceKey>
+          <ChildrenTypeStringMapPersistenceKey valType="String">["$$df029ff9-5c22-4b33-9c51-b30dca7c7434"]</ChildrenTypeStringMapPersistenceKey>
+          <SharedBehaviorPersistenceKey valType="String">20.1.0.2019120323</SharedBehaviorPersistenceKey>
+          <value-keys valType="String">{"UserObjectVersionPersistenceKey": System.String, "ChildrenTypeStringMapPersistenceKey": System.String, "SharedBehaviorPersistenceKey": System.String}</value-keys>
+        </custom-data>
+      </Object>
+      <Object Name="/Study/GlobalReferenceFrame:GlobalReferenceFrame 1" Version="1.0">
+        <class-type valType="String">GlobalReferenceFrame</class-type>
+        <object-name valType="String">GlobalReferenceFrame 1</object-name>
+        <member-data valType="String">{"DisplayText": "Global Reference Frame", "DatabaseId": 4, "SuppressedProperties": [], "ExtensionObjectTypeStrings": {"StackedTransformManager": "StackedTransformManager"}, "_state": {"ValidationState": "Invalid"}, "_isSuppressed": False, "OwnerProxy": None, "NamingMethod": "ManualEdit", "SystemTags": None, "ParentFrame": None, "PreferredCoordinateType": "Cartesian", "DefinitionType": "OriginAndOrientation", "MotionType": "Stationary", "EnablePivot": False, "ConfigurationTransform": ((1.0, 0.0, 0.0, 0.0), (0.0, 1.0, 0.0, 0.0), (0.0, 0.0, 1.0, 0.0), (0.0, 0.0, 0.0, 1.0)), "RelativeConfigurationTransform": ((1.0, 0.0, 0.0, 0.0), (0.0, 1.0, 0.0, 0.0), (0.0, 0.0, 1.0, 0.0), (0.0, 0.0, 0.0, 1.0)), "AccumulatedMotionTransform": ((1.0, 0.0, 0.0, 0.0), (0.0, 1.0, 0.0, 0.0), (0.0, 0.0, 1.0, 0.0), (0.0, 0.0, 0.0, 1.0)), "StackedTransformManager": {"ExtensionObjectTypeStrings": {}, "Label": None, "_transformList": [], "_transformTypeNameToCount": {"TranslationTransform": 1, "RotationTransform": 1, "CoincideTransform": 1, "ReverseAboutXTransform": 1, "ReverseAboutYTransform": 1, "ReverseAboutZTransform": 1}, "Client": $$df029ff9-5c22-4b33-9c51-b30dca7c7434, "RelativeTo": $$df029ff9-5c22-4b33-9c51-b30dca7c7434, "StackedTransformCount": 0}}</member-data>
+        <custom-data>
+          <UserObjectVersionPersistenceKey valType="String">20.1.0.2019120323</UserObjectVersionPersistenceKey>
+          <ChildrenTypeStringMapPersistenceKey valType="String">[]</ChildrenTypeStringMapPersistenceKey>
+          <SharedBehaviorPersistenceKey valType="String">20.1.0.2019120323</SharedBehaviorPersistenceKey>
+          <value-keys valType="String">{"UserObjectVersionPersistenceKey": System.String, "ChildrenTypeStringMapPersistenceKey": System.String, "SharedBehaviorPersistenceKey": System.String}</value-keys>
+        </custom-data>
+      </Object>
+      <Object Name="/Study/ASimFunctionProvider:ASimFunctionProvider 1" Version="1.0">
+        <class-type valType="String">ASimFunctionProvider</class-type>
+        <object-name valType="String">ASimFunctionProvider 1</object-name>
+        <member-data valType="String">{"DisplayText": "ASimFunctionProvider"}</member-data>
+      </Object>
+      <Object Name="/Study/FunctionProvider:AfdFunctionProvider 1" Version="1.0">
+        <class-type valType="String">FunctionProvider</class-type>
+        <object-name valType="String">AfdFunctionProvider 1</object-name>
+        <member-data valType="String">{"DisplayText": "AfdFunctionProvider"}</member-data>
+      </Object>
+      <Object Name="/Study/AemFunctionProvider:AemFunctionProvider 1" Version="1.0">
+        <class-type valType="String">AemFunctionProvider</class-type>
+        <object-name valType="String">AemFunctionProvider 1</object-name>
+        <member-data valType="String">{"DisplayText": "AemFunctionProvider"}</member-data>
+      </Object>
+      <Object Name="/Study/MAPDLFunctionProvider:MAPDLFunctionProvider 1" Version="1.0">
+        <class-type valType="String">MAPDLFunctionProvider</class-type>
+        <object-name valType="String">MAPDLFunctionProvider 1</object-name>
+        <member-data valType="String">{"DisplayText": "MAPDLFunctionProvider"}</member-data>
+      </Object>
+      <Object Name="/Study/PolyflowFunctionProvider:PolyflowFunctionProvider 1" Version="1.0">
+        <class-type valType="String">PolyflowFunctionProvider</class-type>
+        <object-name valType="String">PolyflowFunctionProvider 1</object-name>
+        <member-data valType="String">{"DisplayText": "PolyflowFunctionProvider"}</member-data>
+      </Object>
+    </Container>
+    <Container Name="Modeling" Version="1.0">
+      <container-type valType="String">Ansys.Modeling.Core.Addin:Static</container-type>
+      <static-id valType="String">ModelingStaticContainer</static-id>
+      <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
+      <deleted-sources valType="String">[]</deleted-sources>
+      <last-updated valType="Int64">0</last-updated>
+      <last-modified-by-usage valType="String">{"Extrinsic": 1675, "Input": 1675, "Output": 1675}</last-modified-by-usage>
+      <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
+      <unique-system-dir valType="String">Modeling</unique-system-dir>
+      <contains-significant-data valType="Boolean">false</contains-significant-data>
+    </Container>
+  </Containers>
+</Storage>

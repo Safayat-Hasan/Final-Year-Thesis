@@ -1,0 +1,35 @@
+# encoding: utf-8
+# 2020 R1
+SetScriptVersion(Version="20.1.164")
+system1 = GetSystem(Name="Study")
+geometryModelingComponent1 = system1.GetComponent(Name="Geometry Modeling")
+modeling1 = geometryModelingComponent1.GetTaskObject()
+Modeling.ReloadDocument(ModelingAnchor=modeling1)
+with Transaction():
+    solvePhysicsComponent1 = system1.GetComponent(Name="Solve Physics")
+    solvePhysicsComponent1.Update(AllDependencies=True)
+    resultsEvaluationComponent1 = system1.GetComponent(Name="Results Evaluation")
+    resultsEvaluationComponent1.Refresh()
+resultsEvaluationComponent1.Update(AllDependencies=True)
+resultsEvaluationComponent1.Update(AllDependencies=True)
+with Transaction():
+    study1 = system1.GetContainer(ComponentName="Study")
+    results1 = resultsEvaluationComponent1.GetTaskObject()
+    plane1 = study1.CreateEntity(
+        Type="Plane",
+        Association=results1)
+    plane1.SetEntityProperties(Properties=Set(Transformation=Set(Suppress=False, Offset=Set(DefineBy="Entry", VectorDefineBy="Components", Vector=Set(Cartesian=Set(X="0.059000000000000004 [m]", Y="0.0055000000000000005 [m]", Z="0.020679195699116967 [m]"))))))
+    contourResult1 = study1.CreateEntity(
+        Type="ContourResult",
+        Association=results1)
+    contourResult1.Location = [plane1]
+    contourResult1.Variable = "Velocity.mag"
+    contourResult1.Evaluate()
+with Transaction():
+    streamLine1 = study1.CreateEntity(
+        Type="StreamLine",
+        Association=results1)
+    streamLine1.EvaluateFullRange = False
+streamLine1.UniformDistributionSize = "500"
+streamLine1.Location = ["BODY2"]
+Study.EvaluateResult(Entity=streamLine1)

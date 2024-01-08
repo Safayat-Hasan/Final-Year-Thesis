@@ -1,0 +1,223 @@
+
+ANSYS(R) Fluid Dynamics
+
+Executing from: D:\Softwares\Ansys 2020 R1\ANSYS Inc\v201\AFD\bin\afd.bat 
+
+2020 R1
+
+Point Releases and Patches installed:
+
+ANSYS, Inc. Products 2020 R1
+SpaceClaim 2020 R1
+AIM 2020 R1
+Live (includes SpaceClaim) 2020 R1
+Autodyn 2020 R1
+LS-DYNA 2020 R1
+CFX (includes CFD-Post) 2020 R1
+Chemkin 2020 R1
+EnSight 2020 R1
+FENSAP-ICE 2020 R1
+Fluent (includes CFD-Post) 2020 R1
+Forte 2020 R1
+Polyflow (includes CFD-Post) 2020 R1
+TurboGrid 2020 R1
+ICEM CFD 2020 R1
+Aqwa 2020 R1
+Mechanical Products 2020 R1
+Additive 2020 R1
+ANSYS Sherlock 2020 R1
+Icepak (includes CFD-Post) 2020 R1
+ACIS Geometry Interface 2020 R1
+AutoCAD Geometry Interface 2020 R1
+Catia, Version 4 Geometry Interface 2020 R1
+Catia, Version 5 Geometry Interface 2020 R1
+Catia, Version 6 Geometry Interface 2020 R1
+Creo Elements/Direct Modeling Geometry Interface 2020 R1
+Creo Parametric Geometry Interface 2020 R1
+Inventor Geometry Interface 2020 R1
+JTOpen Geometry Interface 2020 R1
+NX Geometry Interface 2020 R1
+Parasolid Geometry Interface  2020 R1
+Solid Edge Geometry Interface 2020 R1
+SOLIDWORKS Geometry Interface 2020 R1
+ANSYS, Inc. License Manager 2020 R1 
+
+(c) 2014-2019 ANSYS, Inc. All rights reserved. Unauthorized use, distribution or duplication is prohibited. This product is subject to U.S. laws governing export and re-export. For full Legal Notice, see documentation.
+
+Host spawning Node 0 on machine "DESKTOP-442D8MG" (win64).
+WARNING: No cached password or password provided.
+         use '-pass' or '-cache' to provide password
+Host 0 -- ip 192.168.68.101 -- ranks 0 - 1
+
+ host | 0
+======|======
+    0 : SHM
+
+ Prot -  All Intra-node communication is: SHM
+
+
+----------------------------------------------------------------------------------
+ID          Hostname         Core  O.S.         PID    Vendor                     
+----------------------------------------------------------------------------------
+e1          DESKTOP-442D8MG  2/8  Windows-x64  2864   Intel(R) Core(TM) i5-8300H 
+e0*         DESKTOP-442D8MG  1/8  Windows-x64  2176   Intel(R) Core(TM) i5-8300H 
+controller  DESKTOP-442D8MG       Windows-x64  14056  Intel(R) Core(TM) i5-8300H 
+
+MPI Option Selected: ibmmpi
+Selected system interconnect: ethernet
+----------------------------------------------------------------------------------
+
+Cleanup script file is C:\Users\Safayat\AppData\Local\Temp\s3thccog.y3z\cleanup-afd-DESKTOP-442D8MG-14056.bat
+Writing settings ... Done.
+Writing mesh ... Skip writing invalid mesh.
+Skip writing results because of empty mesh.
+Remote client requested shutdown.
+
+ANSYS(R) Fluid Dynamics
+
+Executing from: D:\Softwares\Ansys 2020 R1\ANSYS Inc\v201\AFD\bin\afd.bat 
+
+2020 R1
+
+Point Releases and Patches installed:
+
+ANSYS, Inc. Products 2020 R1
+SpaceClaim 2020 R1
+AIM 2020 R1
+Live (includes SpaceClaim) 2020 R1
+Autodyn 2020 R1
+LS-DYNA 2020 R1
+CFX (includes CFD-Post) 2020 R1
+Chemkin 2020 R1
+EnSight 2020 R1
+FENSAP-ICE 2020 R1
+Fluent (includes CFD-Post) 2020 R1
+Forte 2020 R1
+Polyflow (includes CFD-Post) 2020 R1
+TurboGrid 2020 R1
+ICEM CFD 2020 R1
+Aqwa 2020 R1
+Mechanical Products 2020 R1
+Additive 2020 R1
+ANSYS Sherlock 2020 R1
+Icepak (includes CFD-Post) 2020 R1
+ACIS Geometry Interface 2020 R1
+AutoCAD Geometry Interface 2020 R1
+Catia, Version 4 Geometry Interface 2020 R1
+Catia, Version 5 Geometry Interface 2020 R1
+Catia, Version 6 Geometry Interface 2020 R1
+Creo Elements/Direct Modeling Geometry Interface 2020 R1
+Creo Parametric Geometry Interface 2020 R1
+Inventor Geometry Interface 2020 R1
+JTOpen Geometry Interface 2020 R1
+NX Geometry Interface 2020 R1
+Parasolid Geometry Interface  2020 R1
+Solid Edge Geometry Interface 2020 R1
+SOLIDWORKS Geometry Interface 2020 R1
+ANSYS, Inc. License Manager 2020 R1 
+
+(c) 2014-2019 ANSYS, Inc. All rights reserved. Unauthorized use, distribution or duplication is prohibited. This product is subject to U.S. laws governing export and re-export. For full Legal Notice, see documentation.
+
+Host spawning Node 0 on machine "DESKTOP-442D8MG" (win64).
+WARNING: No cached password or password provided.
+         use '-pass' or '-cache' to provide password
+Host 0 -- ip 192.168.68.101 -- ranks 0 - 3
+
+ host | 0
+======|======
+    0 : SHM
+
+ Prot -  All Intra-node communication is: SHM
+
+
+----------------------------------------------------------------------------------
+ID          Hostname         Core  O.S.         PID    Vendor                     
+----------------------------------------------------------------------------------
+e3          DESKTOP-442D8MG  4/8  Windows-x64  9564   Intel(R) Core(TM) i5-8300H 
+e2          DESKTOP-442D8MG  3/8  Windows-x64  11288  Intel(R) Core(TM) i5-8300H 
+e1          DESKTOP-442D8MG  2/8  Windows-x64  12592  Intel(R) Core(TM) i5-8300H 
+e0*         DESKTOP-442D8MG  1/8  Windows-x64  11436  Intel(R) Core(TM) i5-8300H 
+controller  DESKTOP-442D8MG       Windows-x64  8852   Intel(R) Core(TM) i5-8300H 
+
+MPI Option Selected: ibmmpi
+Selected system interconnect: ethernet
+----------------------------------------------------------------------------------
+
+Cleanup script file is C:\Users\Safayat\AppData\Local\Temp\ngbeqvu4.dif\cleanup-afd-DESKTOP-442D8MG-8852.bat
+Skip reading results, directory is invalid.
+Skip reading mesh, directory is invalid.
+Reading settings ... Done.
+Writing settings ... Done.
+Writing mesh ... Skip writing invalid mesh.
+Skip writing results because of empty mesh.
+Remote client requested shutdown.
+
+ANSYS(R) Fluid Dynamics
+
+Executing from: D:\Softwares\Ansys 2020 R1\ANSYS Inc\v201\AFD\bin\afd.bat 
+
+2020 R1
+
+Point Releases and Patches installed:
+
+ANSYS, Inc. Products 2020 R1
+SpaceClaim 2020 R1
+AIM 2020 R1
+Live (includes SpaceClaim) 2020 R1
+Autodyn 2020 R1
+LS-DYNA 2020 R1
+CFX (includes CFD-Post) 2020 R1
+Chemkin 2020 R1
+EnSight 2020 R1
+FENSAP-ICE 2020 R1
+Fluent (includes CFD-Post) 2020 R1
+Forte 2020 R1
+Polyflow (includes CFD-Post) 2020 R1
+TurboGrid 2020 R1
+ICEM CFD 2020 R1
+Aqwa 2020 R1
+Mechanical Products 2020 R1
+Additive 2020 R1
+ANSYS Sherlock 2020 R1
+Icepak (includes CFD-Post) 2020 R1
+ACIS Geometry Interface 2020 R1
+AutoCAD Geometry Interface 2020 R1
+Catia, Version 4 Geometry Interface 2020 R1
+Catia, Version 5 Geometry Interface 2020 R1
+Catia, Version 6 Geometry Interface 2020 R1
+Creo Elements/Direct Modeling Geometry Interface 2020 R1
+Creo Parametric Geometry Interface 2020 R1
+Inventor Geometry Interface 2020 R1
+JTOpen Geometry Interface 2020 R1
+NX Geometry Interface 2020 R1
+Parasolid Geometry Interface  2020 R1
+Solid Edge Geometry Interface 2020 R1
+SOLIDWORKS Geometry Interface 2020 R1
+ANSYS, Inc. License Manager 2020 R1 
+
+(c) 2014-2019 ANSYS, Inc. All rights reserved. Unauthorized use, distribution or duplication is prohibited. This product is subject to U.S. laws governing export and re-export. For full Legal Notice, see documentation.
+
+Host spawning Node 0 on machine "DESKTOP-442D8MG" (win64).
+WARNING: No cached password or password provided.
+         use '-pass' or '-cache' to provide password
+Host 0 -- ip 192.168.68.101 -- ranks 0 - 1
+
+ host | 0
+======|======
+    0 : SHM
+
+ Prot -  All Intra-node communication is: SHM
+
+
+---------------------------------------------------------------------------------
+ID          Hostname         Core  O.S.         PID   Vendor                     
+---------------------------------------------------------------------------------
+e1          DESKTOP-442D8MG  2/8  Windows-x64  1480  Intel(R) Core(TM) i5-8300H 
+e0*         DESKTOP-442D8MG  1/8  Windows-x64  5204  Intel(R) Core(TM) i5-8300H 
+controller  DESKTOP-442D8MG       Windows-x64  9128  Intel(R) Core(TM) i5-8300H 
+
+MPI Option Selected: ibmmpi
+Selected system interconnect: ethernet
+---------------------------------------------------------------------------------
+
+Cleanup script file is C:\Users\Safayat\AppData\Local\Temp\ztugzfoj.cxp\cleanup-afd-DESKTOP-442D8MG-9128.bat

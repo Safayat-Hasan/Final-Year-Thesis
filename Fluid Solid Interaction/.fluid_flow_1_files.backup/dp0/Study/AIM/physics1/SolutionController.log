@@ -1,0 +1,93 @@
+    *-------------------------------------------------------------*
+    |                                                             |
+    |  W E L C O M E   T O   T H E   A N S Y S (R)  P R O G R A M |
+    |                                                             |
+    *-------------------------------------------------------------*
+    ***************************************************************
+    *                  ANSYS 2020 R1 LEGAL NOTICES                *
+    ***************************************************************
+    *                                                             *
+    * Copyright 2020 SAS IP, Inc.  All rights reserved.           *
+    * Unauthorized use, distribution or duplication is            *
+    * prohibited.                                                 *
+    * ANSYS is a registered trademark of ANSYS, Inc or its        *
+    * subsidiaries in the United States or other countries.       *
+    *                                                             *
+    * ANSYS, Inc. is UL registered                                *
+    * ISO 9001:2008 Companies.                                    *
+    *                                                             *
+    ***************************************************************
+    *                                                             *
+    * THIS ANSYS SOFTWARE PRODUCT AND PROGRAM DOCUMENTATION       *
+    * INCLUDE TRADE SECRETS AND CONFIDENTIAL AND PROPRIETARY      *
+    * PRODUCTS OF ANSYS, INC., ITS SUBSIDIARIES, OR LICENSORS.    *
+    * The software products and documentation are furnished by    *
+    * ANSYS, Inc. or its subsidiaries under a software license    *
+    * agreement that contains provisions concerning               *
+    * non-disclosure, copying, length and nature of use,          *
+    * compliance with exporting laws, warranties, disclaimers,    *
+    * limitations of liability, and remedies, and other           *
+    * provisions.  The software products and documentation may be *
+    * used, disclosed, transferred, or copied only in accordance  *
+    * with the terms and conditions of that software license      *
+    * agreement.                                                  *
+    *                                                             *
+    * See the ANSYS, Inc. online documentation or the ANSYS, Inc. *
+    * documentation CD for the complete Legal Notice.             *
+    *                                                             *
+    ***************************************************************
+    *                                                             *
+    * This product is subject to US laws governing export and     *
+    * re-export.                                                  *
+    *                                                             *
+    * For U.S. Government users, except as specifically granted   *
+    * by the ANSYS, Inc. software license agreement, the use,     *
+    * duplication, or disclosure by the United States Government  *
+    * is subject to restrictions stated in the ANSYS, Inc.        *
+    * software license agreement and FAR 12.212 (for non-DOD      *
+    * licenses).                                                  *
+    *                                                             *
+    ***************************************************************
+    Version No 20,2020,337,1
+
+    *-------------------------------------------------------------*
+        Command line arguments: 
+            -intputFile C:\Users\Safayat\AppData\Local\Temp\proxy_input592484659.xml
+            -parentHost 127.0.0.1
+            -parentPort 63188
+    *-------------------------------------------------------------*
+
+    Broadcasting data on port 63190
+
+    Using default 10 (s) timeout when starting participant:  AFD
+    Chart /Study/MonitorChart:MonitorChart 1 has iter as PrimaryTracker
+ 
+    Connection made to:  AFD
+
+    Received new front end connection
+
+    Loading resource file for the trackers :  D:\Softwares\Ansys 2020 R1\ANSYS Inc\v201\Addins\AIM\bin\Win64\SolverInventory\AfdTrackerDescriptors.xml
+    Loading resource file for the events :  D:\Softwares\Ansys 2020 R1\ANSYS Inc\v201\Addins\AIM\bin\Win64\SolverInventory\AfdTrackerDescriptors.xml
+
+    Successfully registered solver AFD
+    Tracker continuity received:  6.114638e-15
+    Tracker iter received:  1.000000e+00
+    Tracker xvelocity received:  5.276848e-13
+    Tracker yvelocity received:  5.814196e-13
+    Tracker zvelocity received:  6.186323e-13
+
+    Begin monitoring
+    Tracker continuity received:  6.114638e-15
+    Tracker iter received:  1.000000e+00
+    Tracker xvelocity received:  5.276848e-13
+    Tracker yvelocity received:  5.814196e-13
+    Tracker zvelocity received:  6.186323e-13
+    Informing participant [AFD] that it can exit
+    Number of steps monitored: 0
+
+    All participants have completed
+    Saving Database
+    Disconnecting server...
+    Server disconnected
+
+    Finished

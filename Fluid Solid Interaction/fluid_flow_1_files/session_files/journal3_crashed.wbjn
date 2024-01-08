@@ -1,0 +1,43 @@
+# encoding: utf-8
+# 2020 R1
+SetScriptVersion(Version="20.1.164")
+with Transaction():
+    system1 = GetSystem(Name="Study")
+    study1 = system1.GetContainer(ComponentName="Study")
+    resultsEvaluationComponent1 = system1.GetComponent(Name="Results Evaluation")
+    results1 = resultsEvaluationComponent1.GetTaskObject()
+    streamLine1 = study1.CreateEntity(
+        Type="StreamLine",
+        Association=results1)
+    streamLine1.EvaluateFullRange = False
+streamLine1.UniformDistributionSize = "300"
+streamLine1.Location = ["BODY2"]
+solvePhysicsComponent1 = system1.GetComponent(Name="Solve Physics")
+solvePhysicsComponent1.Update(AllDependencies=True)
+Study.EvaluateResult(Entity=streamLine1)
+streamLine1.UniformDistributionSize = "500"
+Study.EvaluateResult(Entity=streamLine1)
+with Transaction():
+    singleValueResult1 = study1.CreateEntity(
+        Type="SingleValueResult",
+        Association=results1)
+    singleValueResult1.EvaluateFullRange = False
+    singleValueResult1.Method = "FunctionCalculatorMethod"
+    singleValueResult1.WeightType = "Simple"
+    singleValueResult1.Function = "Sum"
+    singleValueResult1.Variable = "Force.x"
+singleValueResult1.Evaluate()
+vectorResult1 = study1.GetVectorResult(Name="VectorResult 1")
+vectorResult1.Evaluate()
+vectorResult1.UniformDistributionSize = "500"
+vectorResult1.Evaluate()
+vectorResult1.Variable = "Force"
+vectorResult1.Evaluate()
+vectorResult1.Variable = "PressureForce"
+vectorResult1.Evaluate()
+inletCondition1 = study1.GetBoundary(Name="Boundary 2")
+inletCondition1.Flow.Option = "Pressure"
+inletCondition1.Flow.Pressure.GaugeTotalPressure = "10000 [Pa]"
+with Transaction():
+    solvePhysicsComponent1.Update(AllDependencies=True)
+    resultsEvaluationComponent1.Refresh()
